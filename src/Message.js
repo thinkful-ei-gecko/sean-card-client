@@ -29,8 +29,7 @@ class Message extends React.Component {
         "Good luck and get well!",
         "Sincerely:"
       ],
-      signature: 0,
-      signatures: []
+      signature: 0
     }
   }
   displayMessage = () => {
@@ -41,12 +40,9 @@ class Message extends React.Component {
     else if (this.state.page === 4 || this.state.page === 5 && this.state.signature === 0)
     return <h3>{this.state.prefixMessage[this.state.page]}</h3>
     else {
-      return <div class="signatureMessage"><h3>{this.state.signatures[this.state.signature-1].name}</h3><p>{this.state.signatures[this.state.signature-1].message ?  `- ${this.state.signatures[this.state.signature-1].message}` : '' }</p></div>
+      return <div class="signatureMessage"><h3>{this.props.signatures[this.state.signature-1].name}</h3><p>{this.props.signatures[this.state.signature-1].message ?  `- ${this.props.signatures[this.state.signature-1].message}` : '' }</p></div>
     }
 
-  }
-  componentDidMount() {
-    this.setState({signatures: this.props.signatures});
   }
   goBack = () => {
     let currState = this.state.page;
@@ -70,7 +66,7 @@ class Message extends React.Component {
       let newPage = currState + 1;
       this.setState({page: newPage});
     }
-    if (currState === this.state.prefixMessage.length-1 && this.state.signature !== this.state.signatures.length) {
+    if (currState === this.state.prefixMessage.length-1 && this.state.signature !== this.props.signatures.length) {
       document.getElementById('footer').style.display = 'block';
       let newSig = this.state.signature + 1
       this.setState({signature: newSig})

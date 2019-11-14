@@ -9,7 +9,6 @@ body {
   transition: 1s all;
   display: flex;
   align-content: center;
-  height: 95%;
   text-shadow: 5px 5px 20px black;
 }
 
@@ -27,6 +26,7 @@ body {
   justify-content: center;
   align-content: center;
   width: 100%;
+  padding: 50px 30px 100px 30px;
 }
 
 h1 {

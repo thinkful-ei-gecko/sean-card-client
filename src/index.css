@@ -55,7 +55,7 @@ h1 {
 
 .redo {
   position: absolute;
-  top: 5%;
+  top: 50px;
   right: 5%;
   color: #e3dd35;
   cursor: pointer;

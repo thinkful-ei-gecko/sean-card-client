@@ -26,7 +26,7 @@ class App extends React.Component {
       }
       return res.json();
     })
-    .then(resJson => console.log(resJson))
+    .then(resJson => this.setState({signatures: resJson}))
     .catch(error => {
       console.error('error in fetch');
     });

@@ -15,7 +15,11 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    return fetch(`${config.API_ENDPOINT}`)
+    return fetch(`${config.API_ENDPOINT}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json'
+      }})
     .then(res => {
       if (!res.ok) {
         throw new Error('error in fetch!')

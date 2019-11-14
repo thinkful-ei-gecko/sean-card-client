@@ -10,6 +10,7 @@ body {
   display: flex;
   align-content: center;
   text-shadow: 5px 5px 20px black;
+  height: 95%;
 }
 
 #root {
@@ -46,7 +47,7 @@ h1 {
 }
 
 .undo {
-  position: absolute;
+  position: fixed;
   top: 5%;
   left: 5%;
   color: #e3dd35;
@@ -54,7 +55,7 @@ h1 {
 }
 
 .redo {
-  position: absolute;
+  position: fixed;
   top: 50px;
   right: 5%;
   color: #e3dd35;

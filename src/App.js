@@ -10,12 +10,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      signatures: [{name: 'leon', message: 'get well soon dude'}, {name: 'nandana'}, {name: 'Scott', message: 'kawabunga dude. Best wishe,s hope everything gets better. miss you'}]
+      signatures: []
     }
   }
 
   componentDidMount() {
-    return fetch(`localhost:8000:/sign`)
+    return fetch(`${config.API_ENDPOINT}`)
     .then(res => {
       if (!res.ok) {
         throw new Error('error in fetch!')
@@ -40,7 +40,6 @@ class App extends React.Component {
   }
   render() {
     this.chooseBackground();
-    console.log(this.state.signatures);
     return (
       <div className="App">
         {this.props.location.pathname === '/sign' ? <SignPage /> :<Message signatures={this.state.signatures} />}

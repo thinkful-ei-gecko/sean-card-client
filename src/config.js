@@ -1,3 +1,3 @@
 module.exports = {
-  API_ENDPOINT: 'localhost:8000/',
+  API_ENDPOINT: 'https://salty-everglades-34811.herokuapp.com/',
 };
